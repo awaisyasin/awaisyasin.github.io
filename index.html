@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Awais Yasin</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+
+        <header class="header">
+            <div class="logo">
+                <a href="http://127.0.0.1:5500">
+                    <h3>Awais Yasin</h3>
+                </a>
+                <!-- <a href="http://127.0.0.1:5500"><img src="media/images/awais-yasin-logo.png" alt="logo" /></a> -->
+                <div class="available">
+                    <div class="circle"></div>
+                    Available for work
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="http://127.0.0.1:5500">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="scrollToSection('about-section')">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="scrollToSection('services-section')">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="scrollToSection('contact-section')">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="scrollToSection('blog-section')">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- MESSAGE ME SECTION -->
+        <div class="message-me" id="message-me">
+            <div class="show">
+                <i class="fa-solid fa-message"></i>
+            </div>
+            <div class="hide">
+                <i class="fa-solid fa-times"></i>
+            </div>
+            <div class="whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="email"><i class="fa-solid fa-envelope"></i></div>
+        </div>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero">
+            <!-- Wave Style -->
+            <!-- <img class="wave" src="media/images/hero-wave.svg" alt="wave"> -->
+            <div class="hero-container">
+                <div class="left">
+                    <h3>Hello Hola 你好</h3>
+                    <h2>I'm <span class="name">Awais Yasin</span></h2>
+                    <h3>A Full Stack Django Developer</h3>
+                    <p>
+                        I specialize in developing scalable web applications using Python/Django, JavaScript, and other
+                        related technologies.
+                    </p>
+                    <div class="btn-container">
+                        <button class="btn btn-primary btn-hero-section">
+                            Contact me
+                        </button>
+                        <button class="btn btn-secondary btn-hero-section">
+                            My Services
+                        </button>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <h1>
+                        We <br />
+                        <span class="create">Create</span> <br />
+                        Products
+                    </h1>
+                    <div class="card card-one">
+                        <img class="card-corner" src="media/images/card-one-corner.svg" alt="card corner">
+                        PY/DJ Developer
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+
+        <section class="about-section" id="about-section">
+            <h2 class="title">
+                Meet <span class="name">Awais Yasin</span>
+            </h2>
+            <div class="about-container">
+                <div class="profile">
+                    <img class="profile-img" src="media/images/awaisyasin.png" alt="profile image">
+                    <h3 class="name">Awais Yasin</h3>
+                    <small class="tagline">Developer Entrepreneur Supercoder</small>
+                    <p class="about">You Know what? I love building innovative solutions, the solutions that push the
+                        boundaries of what is <span class="inline-text">possible</span>. I love empowering the
+                        businesses with scalable and future proof
+                        web solutions. Together, let's embark on a journey to make a profound impact and leave our mark
+                        on the universe. <span class="inline-text">Are you ready? let's create a dent in the
+                            universe.</span> <br>
+                        <span class="name">
+                            ~ Awais Yasin
+                            <img class="signature" src="media/images/signature.svg" alt="signature">
+                        </span>
+                    </p>
+                    <div class="btn-container">
+                        <button class="btn btn-primary btn-hero-section btn-active-black">Get in touch</button>
+                        <button class="btn btn-secondary btn-hero-section btn-black btn-active-white">Explore my
+                            work</button>
+                    </div>
+                </div>
+                <!-- <div class="skillset">
+                    <h3 class="title">The technologies I work with include</h3>
+                    <ul class="skills">
+                        <li class="skill">
+                            <div class="progress-bar" data-value="100"></div>
+                            <div class="value">
+                                <h4>100<span class="percentage">%</span></h4><small>Python</small>
+                            </div>
+                        </li>
+                        <li class="skill">
+                            <div class="progress-bar" data-value="85"></div>
+                            <div class="value">
+                                <h4>85<span class="percentage">%</span></h4><small>Django</small>
+                            </div>
+                        </li>
+                        <li class="skill">
+                            <div class="progress-bar" data-value="80"></div>
+                            <div class="value">
+                                <h4>80<span class="percentage">%</span></h4><small>JS</small>
+                            </div>
+                        </li>
+                        <li class="skill">
+                            <div class="progress-bar" data-value="80"></div>
+                            <div class="value">
+                                <h4>80<span class="percentage">%</span></h4><small>React</small>
+                            </div>
+                        </li>
+                        <li class="skill">
+                            <div class="progress-bar" data-value="100"></div>
+                            <div class="value">
+                                <h4>100<span class="percentage">%</span></h4><small>HTML5</small>
+                            </div>
+                        </li>
+                        <li class="skill">
+                            <div class="progress-bar" data-value="100"></div>
+                            <div class="value">
+                                <h4>100<span class="percentage">%</span></h4><small>CSS3</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+            <h3 class="projects-gallery-title">My Projects Gallery</h3>
+            <div class="projects-gallery">
+                <i class="fa-solid fa-angle-left"></i>
+                <i class="fa-solid fa-angle-right"></i>
+                <div class="projects">
+                    <div class="project-card">
+                        <div class="img-container">
+                            <img class="project-logo"
+                                src="https://i.pinimg.com/564x/94/3b/e4/943be4034c8df8e8e14ce2c367146cb2.jpg"
+                                alt="project logo">
+                        </div>
+                        <div class="info-container">
+                            <h3 class="title">PropertEase Project</h3>
+                            <p>Reliable technical support to ensure your systems run smoothly and efficiently.</p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn btn-primary btn-active-black">View more</button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="img-container">
+                            <img class="project-logo"
+                                src="https://i.pinimg.com/564x/68/ca/aa/68caaace8cf0fe1bf6d4903ffc0d3874.jpg"
+                                alt="project logo">
+                        </div>
+                        <div class="info-container">
+                            <h3 class="title">PropertEase Project</h3>
+                            <p>Seamlessly integrate your customer relationship management system for streamlined
+                                operations.</p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn btn-primary btn-active-black">View more</button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="img-container">
+                            <img class="project-logo"
+                                src="https://i.pinimg.com/564x/d1/14/a6/d114a6e6c7ce8059c6516b9b52c14b9a.jpg"
+                                alt="project logo">
+                        </div>
+                        <div class="info-container">
+                            <h3 class="title">PropertEase Project</h3>
+                            <p>Creative visuals that communicate your brand's message and leave a lasting impression.
+                            </p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn btn-primary btn-active-black">View more</button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="img-container">
+                            <img class="project-logo"
+                                src="https://i.pinimg.com/564x/ba/1d/b6/ba1db65838a21626b445876c74e16915.jpg"
+                                alt="project logo">
+                        </div>
+                        <div class="info-container">
+                            <h3 class="title">PropertEase Project</h3>
+                            <p>Beautiful and user-friendly websites that captivate your audience and drive conversions.
+                            </p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn btn-primary btn-active-black">View more</button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="img-container">
+                            <img class="project-logo"
+                                src="https://i.pinimg.com/564x/7e/8d/95/7e8d95c2446e7c32ef764b3f86c5f439.jpg"
+                                alt="project logo">
+                        </div>
+                        <div class="info-container">
+                            <h3 class="title">PropertEase Project</h3>
+                            <p>Develop and optimize your online store for increased sales and customer satisfaction.</p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn btn-primary btn-active-black">View more</button>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn btn-primary btn-hero-section btn-active-black more-projects-btn">More
+                    Projects</button>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+
+        <section class="services-section" id="services-section">
+            <div class="services-container">
+                <h2 class="title">What We Offer</h2>
+                <div class="text-container">
+                    <h3>
+                        Empowering Businesses with Cutting-Edge Web Solutions
+                    </h3>
+                    <p>
+                        Stay ahead of the competition with our cutting-edge web solutions. Our team of experts combines
+                        creativity, technical expertise, and strategic thinking to deliver customized websites,
+                        e-commerce platforms, and web applications that elevate your brand, optimize user experiences,
+                        and deliver measurable business outcomes.
+                    </p>
+                </div>
+                <div class="cards-container">
+                    <div class="card">
+                        <i class="fa-solid fa-code"></i>
+                        <h4>Web Development</h4>
+                        <p>End-to-end web solutions tailored to your unique needs for seamless and exceptional user
+                            experiences.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-desktop"></i>
+                        <h4>Desktop App Development</h4>
+                        <p>Create versatile desktop applications to streamline workflows and boost productivity across
+                            platforms.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <h4>E-commerce Solutions</h4>
+                        <p>Build a robust and powerful online store that drives the sales and enhances exceptional
+                            customer experiences.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-cogs"></i>
+                        <h4>API Development and Integration</h4>
+                        <p>Build custom APIs to enable data exchange and integration between applications.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-tools"></i>
+                        <h4>Website Maintenance and Support</h4>
+                        <p>Keep your website up-to-date with regular content, design, and feature enhancements.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h4>Consulting and Technical Guidance</h4>
+                        <p>Expert advice and guidance on leveraging the right technologies for your projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+
+        <section class="contact-section" id="contact-section">
+            <div class="title">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-container">
+                <div class="form-container">
+                    <div class="left">
+                        <form class="form" id="form">
+                            <div class="form-control">
+                                <input type="text" class="name" id="name" required>
+                                <label for="name">Enter Name</label>
+                            </div>
+                            <div class="form-control">
+                                <input type="email" class="email" id="email" required>
+                                <label for="name">Enter Email</label>
+                            </div>
+                            <div class="form-control">
+                                <textarea class="query" id="query" cols="30" rows="3" required></textarea>
+                                <label for="query">How can we help you?</label>
+                            </div>
+                            <button class="btn btn-primary btn-active-black">Submit</button>
+
+                        </form>
+                    </div>
+                    <div class="right">
+                        <h3>Contact Info</h3>
+                        <div class="phone-container">
+                            <i class="fa-solid fa-phone"></i>
+                            <small>+1(501)020-3040</small>
+                        </div>
+                        <div class="email-container">
+                            <i class="fa-solid fa-envelope"></i>
+                            <small>hello@awaisyasin.com</small>
+                        </div>
+                        <div class="social-links">
+                            <i class="linkedin fa-brands fa-linkedin-in"></i>
+                            <i class="facebook fa-brands fa-facebook-f"></i>
+                            <i class="whatsapp fa-brands fa-whatsapp"></i>
+                            <i class="youtube fa-brands fa-youtube"></i>
+                            <i class="twitter fa-brands fa-x-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER SECTION -->
+
+        <footer><span class="copy">&copy;</span> 2024 <span class="heart">&hearts;</span> Awais Yasin <span
+                class="heart">&hearts;</span> All Rights Reserved</footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
