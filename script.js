@@ -1,3 +1,47 @@
+// LAPTOP, TABLET, AND MOBILE CLASS TOGGLING
+
+window.addEventListener("resize", () => adjustScreen())
+
+function adjustScreen() {
+    const screenWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth
+    const body = document.body
+
+    if (screenWidth >= 1024 && !body.classList.contains("laptop-mode")) {
+        body.classList.remove("tablet-mode", "mobile-mode")
+        body.classList.add("laptop-mode")
+    } else if (screenWidth >= 768 && !body.classList.contains("tablet-mode")) {
+        body.classList.remove("laptop-mode", "mobile-mode")
+        body.classList.add("tablet-mode")
+    } else if (screenWidth < 768 && !body.classList.contains("mobile-mode")) {
+        body.classList.remove("laptop-mode", "tablet-mode")
+        body.classList.add("mobile-mode")
+    }
+}
+
+adjustScreen()
+
+// NAV OPEN AND CLOSE BUTTON FUNCTIONALITY
+const open_btn = document.getElementById("open-btn")
+const close_btn = document.getElementById("close-btn")
+const nav_purple = document.getElementById("nav-purple")
+const nav_black = document.getElementById("nav-black")
+
+open_btn.addEventListener("click", () => showNav())
+close_btn.addEventListener("click", () => hideNav())
+
+function showNav() {
+    nav_purple.classList.add("visible")
+    nav_black.classList.add("visible")
+}
+
+function hideNav() {
+    nav_purple.classList.remove("visible")
+    nav_black.classList.remove("visible")
+}
+
 // CONTACT ME ICONS ANIMATION
 
 const message_me = document.getElementById("message-me")
@@ -21,6 +65,30 @@ message_me.addEventListener("mouseleave", () => {
         message_me.classList.add("active")
     }
 })
+
+// BLUR DESIGN COLOR CHANGING
+const blur_design_els = document.querySelectorAll(".blur-design")
+const colors = [
+    "rgba(113, 242, 1, 0.2)",
+    "rgba(0, 198, 255, 0.2)",
+    "rgba(130, 1, 242, 0.2)",
+]
+
+function blur_design_bg_change() {
+    blur_design_els.forEach(blur_design_el => {
+        blur_design_el.style.backgroundImage = ""
+    })
+
+    const blur_design_el =
+        blur_design_els[Math.floor(Math.random() * blur_design_els.length)]
+    const random_color = colors[Math.floor(Math.random() * colors.length)]
+
+    blur_design_el.style.backgroundImage = `linear-gradient(to bottom, ${random_color} 10%, rgba(255, 255, 255, 0) 50%)`
+}
+
+// setInterval(blur_design_bg_change, 3000)
+
+// SCROLLLIN TO SECTION
 
 const labels = document.querySelectorAll("#form label")
 
@@ -85,19 +153,37 @@ const projectsEl = document.querySelector(".projects")
 const projectCards = document.querySelectorAll(".project-card")
 
 let activeCardIndex = 0
-let initiallyShowing = 3
+
+window.addEventListener("resize", () => findActiveCards())
+
+function findActiveCards() {
+    const screen_width =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth
+
+    if (screen_width >= 1024) {
+        active_cards = 3
+    } else if (screen_width >= 768) {
+        active_cards = 2
+    } else if (screen_width < 768) {
+        active_cards = 1
+    }
+}
+
+findActiveCards()
 
 arrowLeft.addEventListener("click", () => {
     activeCardIndex--
     if (activeCardIndex < 0) {
-        activeCardIndex = projectCards.length - initiallyShowing
+        activeCardIndex = projectCards.length - active_cards
     }
     changeCard("left")
 })
 
 arrowRight.addEventListener("click", () => {
     activeCardIndex++
-    if (activeCardIndex > projectCards.length - initiallyShowing) {
+    if (activeCardIndex > projectCards.length - active_cards) {
         activeCardIndex = 0
     }
     changeCard("right")

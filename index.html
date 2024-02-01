@@ -21,30 +21,44 @@
                     <h3>Awais Yasin</h3>
                 </a>
                 <!-- <a href="http://127.0.0.1:5500"><img src="media/images/awais-yasin-logo.png" alt="logo" /></a> -->
-                <div class="available">
+
+                <!-- AVAILABLE FOR WORK TAG -->
+                <!-- <div class="available">
                     <div class="circle"></div>
                     Available for work
+                </div> -->
+            </div>
+
+            <button class="nav-btn open-btn" id="open-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-purple" id="nav-purple">
+                <div class="nav-black" id="nav-black">
+                    <nav class="nav">
+                        <button class="nav-btn close-btn" id="close-btn">
+                            <i class="fa-solid fa-times"></i>
+                        </button>
+                        <ul>
+                            <li class="nav-item">
+                                <a href="http://127.0.0.1:5500">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" onclick="scrollToSection('about-section')">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" onclick="scrollToSection('services-section')">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" onclick="scrollToSection('contact-section')">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" onclick="scrollToSection('blog-section')">Blog</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <nav class="nav">
-                <ul>
-                    <li class="nav-item">
-                        <a href="http://127.0.0.1:5500">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" onclick="scrollToSection('about-section')">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" onclick="scrollToSection('services-section')">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" onclick="scrollToSection('contact-section')">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" onclick="scrollToSection('blog-section')">Blog</a>
-                    </li>
-                </ul>
-            </nav>
         </header>
 
         <!-- MESSAGE ME SECTION -->
@@ -86,12 +100,17 @@
                 <div class="right">
                     <h1>
                         We <br />
-                        <span class="create">Create</span> <br />
+                        <span class="create">
+                            Create
+                            <div class="blur-design blur-design-one"></div>
+                            <div class="blur-design blur-design-two"></div>
+                            <div class="blur-design blur-design-three"></div>
+                        </span> <br />
                         Products
                     </h1>
-                    <div class="card card-one">
+                    <div class="card">
                         <img class="card-corner" src="media/images/card-one-corner.svg" alt="card corner">
-                        PY/DJ Developer
+                        You know what?
                     </div>
                 </div>
             </div>
@@ -310,46 +329,52 @@
         <!-- CONTACT SECTION -->
 
         <section class="contact-section" id="contact-section">
-            <div class="title">
-                <h2>Contact</h2>
+            <div class="text">
+                <div class="title">
+                    <h2>Contact</h2>
+                </div>
+                <p>
+                    Don't be shy. Give us a call or drop us a line. <br>
+                    Let's make some magic together.
+                </p>
             </div>
-            <div class="contact-container">
-                <div class="form-container">
-                    <div class="left">
-                        <form class="form" id="form">
-                            <div class="form-control">
-                                <input type="text" class="name" id="name" required>
-                                <label for="name">Enter Name</label>
-                            </div>
-                            <div class="form-control">
-                                <input type="email" class="email" id="email" required>
-                                <label for="name">Enter Email</label>
-                            </div>
-                            <div class="form-control">
-                                <textarea class="query" id="query" cols="30" rows="3" required></textarea>
-                                <label for="query">How can we help you?</label>
-                            </div>
-                            <button class="btn btn-primary btn-active-black">Submit</button>
+            <div class="half-background">
+            </div>
+            <div class="form-container">
+                <div class="left">
+                    <form class="form" id="form">
+                        <div class="form-control">
+                            <input type="text" class="name" id="name" required>
+                            <label for="name">Enter Name</label>
+                        </div>
+                        <div class="form-control">
+                            <input type="email" class="email" id="email" required>
+                            <label for="name">Enter Email</label>
+                        </div>
+                        <div class="form-control">
+                            <textarea class="query" id="query" cols="30" rows="3" required></textarea>
+                            <label for="query">How can we help you?</label>
+                        </div>
+                        <button class="btn btn-primary btn-active-black">Submit</button>
 
-                        </form>
+                    </form>
+                </div>
+                <div class="right">
+                    <h3>Contact Info</h3>
+                    <div class="phone-container">
+                        <i class="fa-solid fa-phone"></i>
+                        <small>+1(501)020-3040</small>
                     </div>
-                    <div class="right">
-                        <h3>Contact Info</h3>
-                        <div class="phone-container">
-                            <i class="fa-solid fa-phone"></i>
-                            <small>+1(501)020-3040</small>
-                        </div>
-                        <div class="email-container">
-                            <i class="fa-solid fa-envelope"></i>
-                            <small>hello@awaisyasin.com</small>
-                        </div>
-                        <div class="social-links">
-                            <i class="linkedin fa-brands fa-linkedin-in"></i>
-                            <i class="facebook fa-brands fa-facebook-f"></i>
-                            <i class="whatsapp fa-brands fa-whatsapp"></i>
-                            <i class="youtube fa-brands fa-youtube"></i>
-                            <i class="twitter fa-brands fa-x-twitter"></i>
-                        </div>
+                    <div class="email-container">
+                        <i class="fa-solid fa-envelope"></i>
+                        <small>hello@awaisyasin.com</small>
+                    </div>
+                    <div class="social-links">
+                        <i class="linkedin fa-brands fa-linkedin-in"></i>
+                        <i class="facebook fa-brands fa-facebook-f"></i>
+                        <i class="whatsapp fa-brands fa-whatsapp"></i>
+                        <i class="youtube fa-brands fa-youtube"></i>
+                        <i class="twitter fa-brands fa-x-twitter"></i>
                     </div>
                 </div>
             </div>
