@@ -1,27 +1,27 @@
 // LAPTOP, TABLET, AND MOBILE CLASS TOGGLING
 
-window.addEventListener("resize", () => adjustScreen())
+window.addEventListener("resize", () => updateBodyClasses())
 
-function adjustScreen() {
+function updateBodyClasses() {
     const screenWidth =
         window.innerWidth ||
         document.documentElement.clientWidth ||
         document.body.clientWidth
     const body = document.body
 
-    if (screenWidth >= 1024 && !body.classList.contains("laptop-mode")) {
-        body.classList.remove("tablet-mode", "mobile-mode")
-        body.classList.add("laptop-mode")
-    } else if (screenWidth >= 768 && !body.classList.contains("tablet-mode")) {
-        body.classList.remove("laptop-mode", "mobile-mode")
-        body.classList.add("tablet-mode")
-    } else if (screenWidth < 768 && !body.classList.contains("mobile-mode")) {
-        body.classList.remove("laptop-mode", "tablet-mode")
-        body.classList.add("mobile-mode")
+    if (screenWidth >= 1024 && !body.classList.contains("lg")) {
+        body.classList.remove("md", "sm")
+        body.classList.add("lg")
+    } else if (screenWidth >= 768 && !body.classList.contains("md")) {
+        body.classList.remove("lg", "sm")
+        body.classList.add("md")
+    } else if (screenWidth < 768 && !body.classList.contains("sm")) {
+        body.classList.remove("lg", "md")
+        body.classList.add("sm")
     }
 }
 
-adjustScreen()
+updateBodyClasses()
 
 // NAV OPEN AND CLOSE BUTTON FUNCTIONALITY
 const open_btn = document.getElementById("open-btn")
