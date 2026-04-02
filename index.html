@@ -4,6 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>awaisyasin.co — Backend Engineering Studio</title>
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"/>
+<link rel="shortcut icon" href="assets/images/favicon.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
@@ -57,10 +59,10 @@ body::after{
    CURSOR
 ═══════════════════════════════════════════════════════ */
 #cur-dot{
-  position:fixed;width:7px;height:7px;border-radius:50%;
-  background:var(--accent);pointer-events:none;z-index:9999;
+  position:fixed;width:18px;height:18px;
+  pointer-events:none;z-index:9999;
   transform:translate(-50%,-50%);
-  box-shadow:0 0 10px var(--glow),0 0 22px var(--glow);
+  filter:drop-shadow(0 0 8px rgba(0,229,255,0.35)) drop-shadow(0 0 18px rgba(0,229,255,0.22));
   transition:opacity .2s;
 }
 #cur-ring{
@@ -93,6 +95,11 @@ nav.scrolled{
   display:flex;align-items:center;gap:10px;
   text-decoration:none;position:relative;z-index:2;
 }
+.brand-mark{
+  width:20px;height:20px;display:block;flex-shrink:0;
+}
+.brand-mark path{fill:#e8edf5;}
+.brand-mark.grad path{fill:url(#brand-grad-nav);}
 .nav-wordmark{
   font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;
   color:var(--text);letter-spacing:0.01em;
@@ -173,6 +180,12 @@ nav.scrolled{
   border:1px solid transparent;transition:all .2s;
 }
 .mobile-nav a:hover{color:var(--accent);border-color:var(--border);background:rgba(0,229,255,0.05);}
+.mobile-brand{
+  display:flex;align-items:center;gap:10px;margin:4px 0 14px;
+  padding:0 2px 14px;border-bottom:1px solid var(--border0);
+}
+.mobile-brand .nav-wordmark{font-size:14px;}
+.mobile-brand .nav-badge{font-size:8.5px;padding:1px 6px;}
 
 /* ═══════════════════════════════════════════════════════
    SHARED
@@ -256,6 +269,13 @@ h2.display{
 .hero-badges{
   display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:36px;
 }
+.h-badge.brand{
+  color:var(--text);
+  background:rgba(11,16,32,0.7);
+  border:1px solid var(--border0);
+  gap:9px;
+}
+.h-badge.brand .brand-mark{width:16px;height:16px;}
 .h-badge{
   display:inline-flex;align-items:center;gap:7px;
   font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;
@@ -827,6 +847,8 @@ footer{
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;
 }
 .footer-brand-col{display:flex;flex-direction:column;gap:7px;}
+.footer-brand-lockup{display:flex;align-items:center;gap:9px;}
+.footer-brand-lockup .brand-mark{width:18px;height:18px;}
 .footer-wordmark{
   font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;
   color:var(--text);
@@ -890,7 +912,24 @@ footer{
 </head>
 <body>
 
-<div id="cur-dot"></div>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;left:-9999px;overflow:hidden;">
+  <defs>
+    <linearGradient id="brand-grad-nav" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#7b61ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<svg id="cur-dot" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="cursor-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#7b61ff"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 5 L6.5 44.5 L41.5 44.5 Z M27.5 25.5 L19.5 44.5 L27.5 44.5 Z" fill="url(#cursor-grad)" fill-rule="evenodd"/>
+</svg>
 <div id="cur-ring"></div>
 
 <!-- ══════════════════════════════════════════════
@@ -898,6 +937,9 @@ footer{
 ══════════════════════════════════════════════ -->
 <nav id="navbar">
   <a href="#hero" class="nav-brand">
+    <svg viewBox="0 0 48 48" class="brand-mark grad" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 5 L6.5 44.5 L41.5 44.5 Z M27.5 25.5 L19.5 44.5 L27.5 44.5 Z" fill-rule="evenodd"/>
+    </svg>
     <div class="nav-wordmark">awaisyasin<span class="dot">.</span><span class="co">co</span></div>
     <div class="nav-badge">Studio</div>
   </a>
@@ -921,6 +963,13 @@ footer{
 </nav>
 
 <div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-brand">
+    <svg viewBox="0 0 48 48" class="brand-mark" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 5 L6.5 44.5 L41.5 44.5 Z M27.5 25.5 L19.5 44.5 L27.5 44.5 Z" fill-rule="evenodd"/>
+    </svg>
+    <div class="nav-wordmark">awaisyasin<span class="dot">.</span><span class="co">co</span></div>
+    <div class="nav-badge">Studio</div>
+  </div>
   <a href="#services"  onclick="closeNav()">Services</a>
   <a href="#work"      onclick="closeNav()">Work</a>
   <a href="#stack"     onclick="closeNav()">Stack</a>
@@ -936,6 +985,12 @@ footer{
   <div class="hero-wrap">
 
     <div class="hero-badges rv">
+      <div class="h-badge brand">
+        <svg viewBox="0 0 48 48" class="brand-mark grad" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 5 L6.5 44.5 L41.5 44.5 Z M27.5 25.5 L19.5 44.5 L27.5 44.5 Z" fill-rule="evenodd"/>
+        </svg>
+        Brand Identity v1.0
+      </div>
       <div class="h-badge a"><div class="h-badge-dot"></div>Open for Engagements · 2025</div>
       <div class="h-badge b">🌍 Remote-First · Worldwide</div>
       <div class="h-badge b">🐍 Python &nbsp;·&nbsp; ☁️ AWS</div>
@@ -1515,7 +1570,12 @@ footer{
 <footer>
   <div class="footer-inner">
     <div class="footer-brand-col">
-      <div class="footer-wordmark">awaisyasin<span class="dot">.</span>co</div>
+      <div class="footer-brand-lockup">
+        <svg viewBox="0 0 48 48" class="brand-mark" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 5 L6.5 44.5 L41.5 44.5 Z M27.5 25.5 L19.5 44.5 L27.5 44.5 Z" fill-rule="evenodd"/>
+        </svg>
+        <div class="footer-wordmark">awaisyasin<span class="dot">.</span>co</div>
+      </div>
       <div class="footer-tagline">Backend Engineering Studio · © 2025</div>
     </div>
     <div class="footer-nav">
