@@ -178,12 +178,6 @@ nav.scrolled{
   font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;
   color:var(--muted);text-decoration:none;padding:14px 18px;
   border-radius:8px;letter-spacing:0.06em;text-transform:uppercase;
-  border:1px solid transparent;transition:all .2s;
-}
-.mobile-nav a:hover{color:var(--accent);border-color:var(--border);background:rgba(0,229,255,0.05);}
-.mobile-brand{
-  display:flex;align-items:center;gap:10px;margin:4px 0 14px;
-  padding:0 2px 14px;border-bottom:1px solid var(--border0);
 }
 .mobile-brand .nav-wordmark{font-size:14px;}
 .mobile-brand .nav-badge{font-size:8.5px;padding:1px 6px;}
@@ -937,7 +931,7 @@ footer{
      NAV
 ══════════════════════════════════════════════ -->
 <nav id="navbar">
-  <a href="#hero" class="nav-brand">
+  <a href="#hero" class="nav-brand" onclick="closeNav()">
     <svg viewBox="0 0 48 48" class="brand-mark grad" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M24 5 L6.5 44.5 L41.5 44.5 Z M27.5 25.5 L19.5 44.5 L27.5 44.5 Z" fill-rule="evenodd"/>
     </svg>
@@ -964,13 +958,6 @@ footer{
 </nav>
 
 <div class="mobile-nav" id="mobile-nav">
-  <div class="mobile-brand">
-    <svg viewBox="0 0 48 48" class="brand-mark" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M24 5 L6.5 44.5 L41.5 44.5 Z M27.5 25.5 L19.5 44.5 L27.5 44.5 Z" fill-rule="evenodd"/>
-    </svg>
-    <div class="nav-wordmark">awaisyasin<span class="dot">.</span><span class="co">co</span></div>
-    <div class="nav-badge">Studio</div>
-  </div>
   <a href="#services"  onclick="closeNav()">Services</a>
   <a href="#work"      onclick="closeNav()">Work</a>
   <a href="#stack"     onclick="closeNav()">Stack</a>
