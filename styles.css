@@ -42,7 +42,7 @@
   /* type */
   --sans: 'Geist', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-  --serif-d: 'Cormorant Garamond', 'Newsreader', Georgia, serif;
+  --serif-d: 'EB Garamond', 'Newsreader', Georgia, serif;
 
   /* layout */
   --nav-h: 64px;
@@ -352,42 +352,37 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.02em;line-height:1.08;}
 }
 .hero-title em{
   font-family:var(--serif-d);
-  font-style:italic;
+  font-style:normal;
   font-weight:400;
-  letter-spacing:-0.025em;
-  padding-right:0.05em; /* keep italic tail from clipping the background-clip */
+  letter-spacing:-0.02em;
   background:linear-gradient(110deg, var(--blue) 0%, var(--violet) 50%, var(--pink) 100%);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
 }
 
-/* ── SERIF ITALIC ACCENT ────────────────────────────────────
-   Resend-style emphasis: pair Geist Sans with Instrument Serif italic
+/* ── SERIF ACCENT (upright EB Garamond) ─────────────────────
+   Resend-style emphasis: pair Geist Sans with EB Garamond regular
    for the emphasis phrase in a heading.
-   Usage: <span class="grad serif-i">phrase</span>
+   Usage: <span class="grad serif">phrase</span>
 ─────────────────────────────────────────────────────────── */
-.serif-i{
+.serif{
   font-family:var(--serif-d);
-  font-style:italic;
-  font-weight:600;
-  letter-spacing:-0.025em;
-  padding-right:0.06em;
+  font-style:normal;
+  font-weight:400;
+  letter-spacing:-0.02em;
 }
-.h2 .serif-i,
-.cta-title .serif-i,
-.wf-title .serif-i,
-.display .serif-i{
-  /* Cormorant Garamond has an even smaller x-height — bump more
-     and use weight 600 to balance Geist Sans 600 */
-  font-size:1.14em;
-  line-height:0.94;
+.h2 .serif,
+.cta-title .serif,
+.wf-title .serif,
+.display .serif{
+  /* EB Garamond reads visually smaller than Geist Sans bold —
+     bump slightly so the emphasis phrase sits balanced */
+  font-size:1.08em;
+  line-height:0.98;
 }
-.hero-title .serif-i{
-  font-size:1.10em;
-  line-height:0.94;
-}
-.hero-title em{
-  font-weight:600;
+.hero-title .serif{
+  font-size:1.06em;
+  line-height:0.98;
 }
 
 .hero-deck{
