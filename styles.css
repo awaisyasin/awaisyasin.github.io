@@ -42,7 +42,7 @@
   /* type */
   --sans: 'Geist', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-  --serif-d: 'Instrument Serif', 'Newsreader', Georgia, serif;
+  --serif-d: 'Playfair Display', 'Newsreader', Georgia, serif;
 
   /* layout */
   --nav-h: 64px;
@@ -369,22 +369,25 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.02em;line-height:1.08;}
 .serif-i{
   font-family:var(--serif-d);
   font-style:italic;
-  font-weight:400;
-  letter-spacing:-0.022em;
-  padding-right:0.04em;
+  font-weight:500;
+  letter-spacing:-0.03em;
+  padding-right:0.06em;
 }
 .h2 .serif-i,
 .cta-title .serif-i,
 .wf-title .serif-i,
 .display .serif-i{
-  /* Instrument Serif reads slightly smaller at the same px size
-     — bump it up a touch so it sits visually balanced with the sans */
-  font-size:1.06em;
-  line-height:0.98;
+  /* Playfair Display's smaller x-height reads visually lighter
+     — bump it slightly so it balances Geist Sans weight 600 */
+  font-size:1.08em;
+  line-height:0.96;
 }
 .hero-title .serif-i{
-  font-size:1.04em;
-  line-height:0.98;
+  font-size:1.06em;
+  line-height:0.96;
+}
+.hero-title em{
+  font-weight:500;
 }
 
 .hero-deck{
