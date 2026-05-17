@@ -3,6 +3,23 @@
    Deep ink · refined motion · developer touch
    ═══════════════════════════════════════════════════════════════ */
 
+/* ── @FONT-FACE — Domaine Display Narrow (self-hosted) ─────── */
+@font-face{
+  font-family:'Domaine Display Narrow';
+  src:url('assets/fonts/domaine-display-narrow/DomaineDispNar-Regular.otf') format('opentype');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'Domaine Display Narrow';
+  src:url('assets/fonts/domaine-display-narrow/DomaineDispNar-Medium.otf') format('opentype');
+  font-weight:500;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'Domaine Display Narrow';
+  src:url('assets/fonts/domaine-display-narrow/DomaineDispNar-Semibold.otf') format('opentype');
+  font-weight:600;font-style:normal;font-display:swap;
+}
+
 /* ── TOKENS ─────────────────────────────────────────────────── */
 :root{
   /* surfaces */
@@ -42,7 +59,7 @@
   /* type */
   --sans: 'Geist', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-  --serif-d: 'EB Garamond', 'Newsreader', Georgia, serif;
+  --serif-d: 'Domaine Display Narrow', 'EB Garamond', 'Newsreader', Georgia, serif;
 
   /* layout */
   --nav-h: 64px;
@@ -354,35 +371,37 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-0.02em;line-height:1.08;}
   font-family:var(--serif-d);
   font-style:normal;
   font-weight:400;
-  letter-spacing:-0.02em;
+  letter-spacing:-0.015em;
   background:linear-gradient(110deg, var(--blue) 0%, var(--violet) 50%, var(--pink) 100%);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
 }
 
-/* ── SERIF ACCENT (upright EB Garamond) ─────────────────────
-   Resend-style emphasis: pair Geist Sans with EB Garamond regular
-   for the emphasis phrase in a heading.
+/* ── SERIF ACCENT (Domaine Display Narrow, upright) ─────────
+   Resend-style emphasis: pair Geist Sans with Domaine Display
+   Narrow regular for the emphasis phrase in a heading.
    Usage: <span class="grad serif">phrase</span>
 ─────────────────────────────────────────────────────────── */
 .serif{
   font-family:var(--serif-d);
   font-style:normal;
   font-weight:400;
-  letter-spacing:-0.02em;
+  letter-spacing:-0.015em;
 }
 .h2 .serif,
 .cta-title .serif,
 .wf-title .serif,
 .display .serif{
-  /* EB Garamond reads visually smaller than Geist Sans bold —
-     bump slightly so the emphasis phrase sits balanced */
-  font-size:1.08em;
-  line-height:0.98;
+  /* Domaine Display Narrow has high stroke contrast and tall
+     ascenders — keep the size close to 1:1 so it doesn't tower
+     over the sans, and loosen line-height to give the display
+     letterforms breathing room */
+  font-size:1.04em;
+  line-height:1.0;
 }
 .hero-title .serif{
-  font-size:1.06em;
-  line-height:0.98;
+  font-size:1.02em;
+  line-height:1.0;
 }
 
 .hero-deck{
