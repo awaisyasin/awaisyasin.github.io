@@ -3,235 +3,192 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Awais Yasin — Backend Engineer · The Backend Dispatch · Vol. 01</title>
-<meta name="description" content="Awais Yasin — Backend engineer building Python/Django APIs, async pipelines, and AWS cloud systems that survive production."/>
+<title>Awais Yasin — Backend Engineer · Python · Django · AWS</title>
+<meta name="description" content="Awais Yasin — Backend engineer building Python/Django APIs, async task pipelines, and AWS cloud systems that survive production."/>
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"/>
 <link rel="shortcut icon" href="assets/images/favicon.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-<!-- ═══ CURSOR ═══ -->
-<div id="reticle" aria-hidden="true"></div>
-<div id="reticle-dot" aria-hidden="true"></div>
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
 
-<!-- ═══ MASTHEAD ═══ -->
-<header class="masthead" id="masthead">
-  <div class="masthead-rule"></div>
-
-  <div class="masthead-row thin">
-    <div class="mh-edition">
-      <span><strong>Vol.</strong> 01</span>
-      <span><strong>No.</strong> 26</span>
-      <span><strong>Est.</strong> 2024</span>
-      <span class="hide-md"><strong>Issued from</strong> Lahore · PK</span>
-    </div>
-    <div class="mh-stamp">Available · Open to remote roles</div>
-  </div>
-
-  <div class="masthead-title">
-    <a href="#top" class="mt-brand" aria-label="awaisyasin.co — top">
-      <svg viewBox="0 0 48 48" class="mt-mark" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M24 5 L6.5 44.5 L41.5 44.5 Z" />
-        <path d="M27.5 25.5 L19.5 44.5 L27.5 44.5 Z" class="red" />
-      </svg>
-      <div>
-        <div class="mt-name">awaisyasin<span class="dot">.</span><span class="tld">co</span></div>
-      </div>
+    <a href="#top" class="brand" aria-label="awaisyasin.co — home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">awaisyasin<span class="tld">.co</span></span>
     </a>
-    <div class="mt-tagline">A field journal of backend engineering — Django, async pipelines, and cloud systems that hold up under traffic.</div>
-  </div>
 
-  <nav class="masthead-nav" aria-label="primary">
-    <div class="mn-links">
+    <div class="nav-links">
       <a href="#services" data-jump>Services</a>
-      <a href="#process" data-jump>Process</a>
       <a href="#work" data-jump>Work</a>
       <a href="#stack" data-jump>Stack</a>
       <a href="#about" data-jump>About</a>
-      <a href="#reports" data-jump>Reports</a>
-      <a href="#archive" data-jump>Archive</a>
+      <a href="#writing" data-jump>Writing</a>
     </div>
-    <a href="#contact" class="mn-hire" data-jump>Hire Me</a>
-    <button class="mn-burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </nav>
-</header>
 
-<!-- ═══ MOBILE MENU ═══ -->
+    <div class="nav-right">
+      <div class="status hide-mobile">Available</div>
+      <a href="#contact" class="btn btn-primary" data-jump>Hire Me</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- mobile menu -->
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-  <div class="mobile-menu-head">
-    <div style="font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--margin);">Sections</div>
-    <button class="mn-burger open" aria-label="Close menu" onclick="document.getElementById('burger').click()"><span></span><span></span><span></span></button>
-  </div>
-  <a href="#services" data-jump>Services <span>§01</span></a>
-  <a href="#process" data-jump>Process <span>§02</span></a>
-  <a href="#work" data-jump>Work <span>§03</span></a>
-  <a href="#stack" data-jump>Stack <span>§04</span></a>
-  <a href="#about" data-jump>About <span>§05</span></a>
-  <a href="#reports" data-jump>Reports <span>§06</span></a>
-  <a href="#archive" data-jump>Archive <span>§07</span></a>
-  <a href="#contact" data-jump style="color:var(--red);">Hire Me <span>§08</span></a>
-</div>
-
-<!-- ═══ WIRE TICKER ═══ -->
-<div class="wire" aria-hidden="true">
-  <div class="wire-label">Wire</div>
-  <div class="wire-track" id="wire-track">
-    <div class="wire-item">Django REST Framework</div>
-    <div class="wire-item">AWS ECS &amp; RDS</div>
-    <div class="wire-item">PostgreSQL Optimisation</div>
-    <div class="wire-item">Celery + SQS Pipelines</div>
-    <div class="wire-item">Redis Caching</div>
-    <div class="wire-item">CI/CD with GitHub Actions</div>
-    <div class="wire-item">Stripe Billing Systems</div>
-    <div class="wire-item">FastAPI Microservices</div>
-    <div class="wire-item">Zero-Downtime Deploys</div>
-    <div class="wire-item">API Security &amp; Auth</div>
-    <div class="wire-item">Async Notification Pipelines</div>
-    <div class="wire-item">RBAC Implementations</div>
-  </div>
+  <a href="#services" data-jump>Services <span>01</span></a>
+  <a href="#work" data-jump>Work <span>02</span></a>
+  <a href="#stack" data-jump>Stack <span>03</span></a>
+  <a href="#about" data-jump>About <span>04</span></a>
+  <a href="#writing" data-jump>Writing <span>05</span></a>
+  <a href="#contact" data-jump>Hire Me <span>06</span></a>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     HERO — COVER STORY
+     HERO
 ═══════════════════════════════════════════════════════════ -->
-<section id="top" class="hero" aria-label="Cover story">
+<section id="top" class="hero">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-mesh-3" aria-hidden="true"></div>
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+
   <div class="wrap">
+    <div class="hero-inner">
 
-    <div class="hero-meta rv">
-      <div>Cover story · Edition Vol. 01</div>
-      <div class="hero-meta-r">
-        <span>Filed under <b>BACKEND</b></span>
-        <span>Beat: <b>PYTHON · DJANGO · AWS</b></span>
-        <span>Status <b style="color:var(--red);">OPEN TO ROLES</b></span>
-      </div>
-    </div>
+      <a href="#work" class="hero-chip rv" data-jump>
+        <span class="hero-chip-tag">New</span>
+        <span>Featured case study — Click2Deploy</span>
+        <span class="hero-chip-arrow">→</span>
+      </a>
 
-    <div class="hero-eyebrow rv d1"><span>The Cover Story · Vol. 01</span></div>
+      <h1 class="hero-title rv d1">
+        Backend code<br/>
+        <em>built to survive</em><br/>
+        production.
+      </h1>
 
-    <h1 class="hero-title rv d1">
-      Backend code<br/>
-      <em>that survives</em><br/>
-      <span class="stroke">production,</span><br/>
-      not just review.
-    </h1>
-
-    <div class="hero-grid">
-      <div class="hero-byline rv d2">
-        <div class="hero-byline-line"><span>Written by</span><b>Awais Yasin</b></div>
-        <div class="hero-byline-line"><span>Trade</span><b>Backend Engineer</b></div>
-        <div class="hero-byline-line"><span>Stack</span><b>Python · Django · AWS</b></div>
-        <div class="hero-byline-line"><span>Years live</span><b>2+ in production</b></div>
-      </div>
-
-      <p class="hero-deck rv d3">
-        I'm <strong>Awais Yasin</strong> — a backend engineer who builds <em>Python and Django systems</em> end-to-end. Subscription billing, async task pipelines, AI integrations, and cloud deployments that scale without drama. Written, documented, and handed off so your team can pick it up — not a black box only I can maintain.
+      <p class="hero-deck rv d2">
+        I'm <strong>Awais Yasin</strong> — a backend engineer building Python/Django APIs, async task pipelines, and cloud systems for teams that ship.
       </p>
 
-      <aside class="hero-marginal rv d4">
-        <h4>In this issue</h4>
-        <p>§01 — The disciplines</p>
-        <p>§02 — How I work</p>
-        <p>§03 — Selected dossier</p>
-        <p>§04 — The toolkit</p>
-        <p>§05 — The engineer</p>
-        <p>§06 — Field reports</p>
-        <p>§07 — Archive</p>
-        <p>§08 — Get in touch</p>
-      </aside>
-    </div>
+      <div class="hero-actions rv d3">
+        <a href="#contact" class="btn btn-primary btn-lg" data-jump>Hire Me →</a>
+        <a href="#work" class="btn btn-secondary btn-lg" data-jump>View Work</a>
+      </div>
 
-    <div class="hero-actions rv d4">
-      <a href="#contact" class="btn btn-primary" data-jump>Hire Me</a>
-      <a href="#work" class="btn btn-ghost" data-jump>Read the dossier</a>
-    </div>
+      <!-- code card centerpiece -->
+      <div class="code-card rv d4">
+        <div class="code-head">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <div class="code-file">api/views.py</div>
+          <div class="code-tabs">
+            <span class="code-tab active">views.py</span>
+            <span class="code-tab">tasks.py</span>
+            <span class="code-tab">models.py</span>
+          </div>
+        </div>
+        <div class="code-body">
+<pre><span class="tok-cm"># Subscription API — Stripe-backed, async-notified</span>
+<span class="tok-key">from</span> rest_framework.viewsets <span class="tok-key">import</span> ModelViewSet
+<span class="tok-key">from</span> .models       <span class="tok-key">import</span> <span class="tok-cls">Subscription</span>
+<span class="tok-key">from</span> .tasks        <span class="tok-key">import</span> <span class="tok-fn">notify_billing</span>
+<span class="tok-key">from</span> .permissions  <span class="tok-key">import</span> <span class="tok-cls">IsTenantOwner</span>
 
-    <div class="hero-metrics rv d5">
-      <div class="metric">
-        <div class="metric-label">In production</div>
-        <div class="metric-value">2<sup>+</sup></div>
-        <div class="metric-foot"><em>Years shipping Django</em></div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Projects shipped</div>
-        <div class="metric-value">8<sup>+</sup></div>
-        <div class="metric-foot"><em>Live, paying, in use</em></div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Working mode</div>
-        <div class="metric-value">100<sup>%</sup></div>
-        <div class="metric-foot"><em>Remote · async-first</em></div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Engagement</div>
-        <div class="metric-value">$2–4<sup>k</sup></div>
-        <div class="metric-foot"><em>Per month · full or contract</em></div>
-      </div>
-    </div>
 
+<span class="tok-key">class</span> <span class="tok-cls">SubscriptionViewSet</span>(<span class="tok-cls">ModelViewSet</span>):
+    permission_classes = [<span class="tok-cls">IsTenantOwner</span>]
+    queryset = <span class="tok-cls">Subscription</span>.objects.select_related(<span class="tok-str">"plan"</span>, <span class="tok-str">"tenant"</span>)
+
+    <span class="tok-key">def</span> <span class="tok-fn">perform_update</span>(<span class="tok-key">self</span>, serializer):
+        <span class="tok-cm">"""Save the change, then dispatch billing async."""</span>
+        sub = serializer.save()
+        <span class="tok-fn">notify_billing</span>.delay(sub.id, event=<span class="tok-str">"plan_changed"</span>)
+        <span class="tok-key">return</span> sub</pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-label">Stack</div>
+    <div class="marquee-track" id="marquee-track">
+      <span class="marquee-item">Python 3.11+</span>
+      <span class="marquee-item">Django REST Framework</span>
+      <span class="marquee-item">FastAPI</span>
+      <span class="marquee-item">PostgreSQL</span>
+      <span class="marquee-item">Redis</span>
+      <span class="marquee-item">Celery</span>
+      <span class="marquee-item">AWS ECS</span>
+      <span class="marquee-item">RDS · ElastiCache</span>
+      <span class="marquee-item">Docker</span>
+      <span class="marquee-item">GitHub Actions</span>
+      <span class="marquee-item">Stripe</span>
+      <span class="marquee-item">SendGrid</span>
+      <span class="marquee-item">Nginx · Gunicorn</span>
+      <span class="marquee-item">Terraform</span>
+    </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     §01 — SERVICES / THE DISCIPLINES
+     SERVICES
 ═══════════════════════════════════════════════════════════ -->
-<section id="services" class="services-bg">
+<section id="services">
   <div class="wrap">
 
-    <header class="chapter rv">
-      <div class="ch-num">§<em>01</em></div>
-      <div class="ch-head">
-        <div class="ch-kicker">The disciplines</div>
-        <h2 class="ch-title">Three crafts.<br/><em>Practised in depth.</em></h2>
-        <p class="ch-deck">Depth beats breadth. I work in a tight set of disciplines where I know what good looks like — and where I've made enough mistakes to recognise the bad ones early.</p>
-      </div>
+    <header class="section-head rv">
+      <div class="eyebrow">01 · Services</div>
+      <h2 class="h2">Three disciplines. <span class="grad">Practised in depth.</span></h2>
+      <p class="deck" style="margin:16px auto 0;">Depth beats breadth. I work in a tight set of disciplines where I know what good looks like — and where I've made enough mistakes to recognise the bad ones early.</p>
     </header>
 
-    <div class="services rv d1">
+    <div class="services-grid">
 
-      <article class="svc">
-        <div class="svc-num">01 — Discipline</div>
-        <div class="svc-glyph">/api</div>
+      <article class="svc-card rv d1">
+        <div class="svc-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5b8cff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
         <h3 class="svc-title">API &amp; Backend Engineering</h3>
-        <p class="svc-desc">Production-grade REST and GraphQL APIs in Django or FastAPI. Designed for performance from day one — proper serialisation, DB query budgets, caching layers, and auth systems that don't leak.</p>
-        <div class="svc-chips">
-          <span class="chip">Django DRF</span>
-          <span class="chip">FastAPI</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">Redis</span>
-          <span class="chip">OAuth2 / JWT</span>
-        </div>
+        <p class="svc-desc">Production-grade REST and GraphQL APIs in Django or FastAPI — proper serialisation, DB query budgets, caching layers, and auth that doesn't leak.</p>
+        <ul class="svc-list">
+          <li>Django DRF · FastAPI</li>
+          <li>PostgreSQL · Redis</li>
+          <li>OAuth2 · JWT · RBAC</li>
+        </ul>
       </article>
 
-      <article class="svc">
-        <div class="svc-num">02 — Discipline</div>
-        <div class="svc-glyph">/aws</div>
+      <article class="svc-card rv d2">
+        <div class="svc-icon-wrap violet" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-2-8.6A6 6 0 0 0 5 14a4 4 0 0 0 .9 7.9z"/></svg>
+        </div>
         <h3 class="svc-title">AWS Cloud Architecture</h3>
-        <p class="svc-desc">Right-sized, cost-aware AWS infrastructure that scales on demand and costs sensibly when it doesn't. ECS deployments, RDS tuning, serverless pipelines — or a full Terraform-based setup built from scratch.</p>
-        <div class="svc-chips">
-          <span class="chip">ECS / EKS</span>
-          <span class="chip">RDS / Aurora</span>
-          <span class="chip">Lambda</span>
-          <span class="chip">Terraform</span>
-          <span class="chip">CloudFormation</span>
-        </div>
+        <p class="svc-desc">Right-sized, cost-aware AWS infrastructure that scales on demand and costs sensibly when it doesn't. ECS, RDS, serverless — or full Terraform from scratch.</p>
+        <ul class="svc-list">
+          <li>ECS · EKS · Lambda</li>
+          <li>RDS · Aurora · S3</li>
+          <li>Terraform · CloudFormation</li>
+        </ul>
       </article>
 
-      <article class="svc">
-        <div class="svc-num">03 — Discipline</div>
-        <div class="svc-glyph">/ops</div>
-        <h3 class="svc-title">Async Systems &amp; DevOps</h3>
-        <p class="svc-desc">Task queues, event-driven pipelines, background workers, and CI/CD that deploys without drama. Built with Celery, SQS, or custom patterns — your web process stays fast, your queue handles the weight.</p>
-        <div class="svc-chips">
-          <span class="chip">Celery</span>
-          <span class="chip">AWS SQS</span>
-          <span class="chip">Docker</span>
-          <span class="chip">GitHub Actions</span>
-          <span class="chip">Nginx / Gunicorn</span>
+      <article class="svc-card rv d3">
+        <div class="svc-icon-wrap emerald" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         </div>
+        <h3 class="svc-title">Async Systems &amp; DevOps</h3>
+        <p class="svc-desc">Task queues, event-driven pipelines, background workers, and CI/CD that deploys without drama. Your web process stays fast — the queue carries the weight.</p>
+        <ul class="svc-list">
+          <li>Celery · AWS SQS</li>
+          <li>Docker · GitHub Actions</li>
+          <li>Nginx · Gunicorn</li>
+        </ul>
       </article>
 
     </div>
@@ -239,48 +196,157 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     §02 — PROCESS / THE WORKFLOW
+     FEATURE STRIP — APIs
 ═══════════════════════════════════════════════════════════ -->
-<section id="process">
+<section style="padding-top:60px;padding-bottom:60px;">
   <div class="wrap">
 
-    <header class="chapter rv">
-      <div class="ch-num">§<em>02</em></div>
-      <div class="ch-head">
-        <div class="ch-kicker">The workflow</div>
-        <h2 class="ch-title">Async-first.<br/><em>No surprises.</em></h2>
-        <p class="ch-deck">A four-step engagement designed for remote teams across timezones. Written updates, clear scope, and a hand-off your team can actually pick up.</p>
+    <div class="feature">
+      <div class="feature-text rv">
+        <div class="eyebrow violet">REST · DRF · FastAPI</div>
+        <h2 class="h2">APIs that don't leak <span class="grad">under load.</span></h2>
+        <p class="lead">Production-grade endpoints with tight query budgets, layered auth, and serialisation that doesn't bleed N+1s into your DB.</p>
+        <ul class="feature-bullets">
+          <li><span><strong>Performance from day one.</strong> Indexed queries, paginated responses, sensible caching.</span></li>
+          <li><span><strong>Auth that holds.</strong> JWT, OAuth2, RBAC with three-role tenants — tested under the patterns that actually break.</span></li>
+          <li><span><strong>Tested as written.</strong> pytest + coverage gated in CI before anything ships.</span></li>
+        </ul>
       </div>
+      <div class="feature-visual rv d2">
+        <div class="req-resp">
+          <div class="req-resp-card">
+            <h5>Request</h5>
+            <div><span class="method">POST</span> <span class="url">/api/subscriptions/</span></div>
+            <div style="color:var(--text-faint);margin-top:6px;">Authorization: Bearer ***</div>
+            <div style="color:var(--text-faint);">Content-Type: application/json</div>
+            <div style="margin-top:10px;">
+{<br/>
+&nbsp;&nbsp;<span style="color:var(--code-prop);">"plan"</span>: <span style="color:var(--code-str);">"pro_monthly"</span>,<br/>
+&nbsp;&nbsp;<span style="color:var(--code-prop);">"tenant"</span>: <span style="color:var(--code-num);">847</span><br/>
+}
+            </div>
+          </div>
+          <div class="req-resp-card">
+            <h5>Response · <span class="status-200">200 OK</span></h5>
+            <div style="color:var(--text-faint);">x-request-id: req_8a1f...</div>
+            <div style="color:var(--text-faint);">x-runtime: 24ms</div>
+            <div style="margin-top:10px;">
+{<br/>
+&nbsp;&nbsp;<span style="color:var(--code-prop);">"id"</span>: <span style="color:var(--code-num);">1382</span>,<br/>
+&nbsp;&nbsp;<span style="color:var(--code-prop);">"status"</span>: <span style="color:var(--code-str);">"active"</span>,<br/>
+&nbsp;&nbsp;<span style="color:var(--code-prop);">"plan"</span>: <span style="color:var(--code-str);">"pro_monthly"</span>,<br/>
+&nbsp;&nbsp;<span style="color:var(--code-prop);">"next_renewal"</span>: <span style="color:var(--code-str);">"2026-06-17"</span><br/>
+}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE STRIP — Async -->
+    <div class="feature reverse">
+      <div class="feature-text rv">
+        <div class="eyebrow emerald">Celery · SQS · workers</div>
+        <h2 class="h2">Async pipelines, <span class="grad">decoupled from the API.</span></h2>
+        <p class="lead">Long-running work — email, billing, image builds, AI calls — gets handed to workers. Your API stays under 50ms.</p>
+        <ul class="feature-bullets">
+          <li><span><strong>Decoupled by design.</strong> Web tier produces; workers consume; no shared state at the join.</span></li>
+          <li><span><strong>Retries with intent.</strong> Exponential backoff, dead-letter queues, observable failure modes.</span></li>
+          <li><span><strong>Real-world stacks.</strong> Celery + Redis, Celery + SQS, or pure SQS workers when latency demands it.</span></li>
+        </ul>
+      </div>
+      <div class="feature-visual rv d2">
+        <div class="arch">
+          <div class="arch-row">
+            <div class="arch-box"><div class="icon">A</div>Django API</div>
+            <div class="arch-arrow"></div>
+            <div class="arch-box pink"><div class="icon">Q</div>Redis Queue</div>
+          </div>
+          <div style="padding-left:24px;color:var(--text-faint);font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;margin:4px 0;">↓ celery dispatch</div>
+          <div class="arch-row">
+            <div class="arch-box muted"><div class="icon">W</div>Worker 1 — billing</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-box muted"><div class="icon">W</div>Worker 2 — email · SendGrid</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-box muted"><div class="icon">W</div>Worker 3 — image build · S3</div>
+          </div>
+          <div style="padding-left:24px;color:var(--text-faint);font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;margin:4px 0;">↓ status</div>
+          <div class="arch-row">
+            <div class="arch-box green"><div class="icon">✓</div>Notification · webhook · audit log</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE STRIP — Deploy -->
+    <div class="feature">
+      <div class="feature-text rv">
+        <div class="eyebrow amber">Docker · ECS · GitHub Actions</div>
+        <h2 class="h2">Deploys that don't <span class="grad">wake anyone up.</span></h2>
+        <p class="lead">Reproducible builds, gated by CI, deployed to AWS ECS with zero-downtime patterns. The kind of release process you forget about.</p>
+        <ul class="feature-bullets">
+          <li><span><strong>Reproducible builds.</strong> Dockerised local parity with production, no "works on my machine."</span></li>
+          <li><span><strong>Gated by CI.</strong> Lint, type, test, security scan — fail loudly, merge only when green.</span></li>
+          <li><span><strong>Zero-downtime ECS.</strong> Rolling updates, health checks, fast rollback when a deploy goes bad.</span></li>
+        </ul>
+      </div>
+      <div class="feature-visual rv d2">
+        <div class="terminal">
+          <div class="terminal-head">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <div class="code-file">github-actions · deploy.yml</div>
+          </div>
+          <div class="terminal-body">
+<div class="prompt">git push origin main</div>
+<div class="out">→ <span style="color:var(--blue);">Build</span> · pulling base image python:3.11-slim</div>
+<div class="out">→ <span style="color:var(--blue);">Build</span> · installing 47 packages · 12.3s</div>
+<div class="out">→ <span style="color:var(--violet);">Test</span> · running pytest with coverage</div>
+<div class="out">→ <span style="color:var(--violet);">Test</span> · 184 passed, 0 failed · 92% cov</div>
+<div class="out">→ <span style="color:var(--amber);">Push</span> · ecr.us-east-1.amazonaws.com/awaisyasin/api:8a1f7d2</div>
+<div class="out">→ <span style="color:var(--pink);">Deploy</span> · ECS rolling update · 2/2 healthy</div>
+<div class="ok">✓ Deployed in 2m 41s · zero downtime</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PROCESS
+═══════════════════════════════════════════════════════════ -->
+<section id="process" style="background:linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);">
+  <div class="wrap">
+
+    <header class="section-head rv">
+      <div class="eyebrow emerald">02 · How I work</div>
+      <h2 class="h2">Async-first. <span class="grad">No surprises.</span></h2>
+      <p class="deck" style="margin:16px auto 0;">A four-step engagement built for remote teams across timezones. Written updates, clear scope, and a hand-off your team can actually pick up.</p>
     </header>
 
-    <div class="process rv d1">
-      <div class="step">
-        <div class="step-tag"><span>Step</span><span>Day 0</span></div>
-        <div class="step-num">0<em>1</em></div>
-        <h3 class="step-title">Intro call or async brief</h3>
-        <p class="step-desc">A 30-minute call or a written brief — your preference. I ask the technical questions up front so we don't waste time later.</p>
-        <div class="step-arrow">→</div>
+    <div class="process-grid">
+      <div class="proc-step rv d1">
+        <div class="proc-num">01</div>
+        <h4 class="proc-title">Intro / async brief</h4>
+        <p class="proc-desc">A 30-minute call or a written brief — your preference. Technical questions up front so we don't waste time later.</p>
       </div>
-      <div class="step">
-        <div class="step-tag"><span>Step</span><span>Day 1–3</span></div>
-        <div class="step-num">0<em>2</em></div>
-        <h3 class="step-title">Scope &amp; expectations</h3>
-        <p class="step-desc">Clear deliverables, timeline, and communication cadence agreed upfront. No scope creep, no vague handwaves at the deadline.</p>
-        <div class="step-arrow">→</div>
+      <div class="proc-step rv d2">
+        <div class="proc-num">02</div>
+        <h4 class="proc-title">Scope &amp; cadence</h4>
+        <p class="proc-desc">Deliverables, timeline, and communication cadence agreed up front. No scope creep, no vague handwaves at the deadline.</p>
       </div>
-      <div class="step">
-        <div class="step-tag"><span>Step</span><span>Ongoing</span></div>
-        <div class="step-num">0<em>3</em></div>
-        <h3 class="step-title">Build &amp; iterate</h3>
-        <p class="step-desc">Regular async updates, PRs open to your team's review, and written status — so you're never guessing across timezones.</p>
-        <div class="step-arrow">→</div>
+      <div class="proc-step rv d3">
+        <div class="proc-num">03</div>
+        <h4 class="proc-title">Build &amp; iterate</h4>
+        <p class="proc-desc">Regular async updates, PRs open to your team's review, and written status — so you're never guessing across timezones.</p>
       </div>
-      <div class="step">
-        <div class="step-tag"><span>Step</span><span>Ship</span></div>
-        <div class="step-num">0<em>4</em></div>
-        <h3 class="step-title">Hand off clean</h3>
-        <p class="step-desc">Production-ready code with docs, tests, and context your team can actually pick up — not a black box only I can maintain.</p>
-        <div class="step-arrow">→</div>
+      <div class="proc-step rv d4">
+        <div class="proc-num">04</div>
+        <h4 class="proc-title">Ship &amp; hand off</h4>
+        <p class="proc-desc">Production-ready code with docs, tests, and context your team can actually pick up — not a black box only I can maintain.</p>
       </div>
     </div>
 
@@ -288,97 +354,85 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     §03 — WORK / THE DOSSIER
+     WORK
 ═══════════════════════════════════════════════════════════ -->
 <section id="work">
   <div class="wrap">
 
-    <header class="chapter rv">
-      <div class="ch-num">§<em>03</em></div>
-      <div class="ch-head">
-        <div class="ch-kicker">Selected dossier</div>
-        <h2 class="ch-title">Things I've<br/><em>actually built.</em></h2>
-        <p class="ch-deck">A short list of production systems I shipped — schema to deploy, mostly solo. Each one was a real product with real users, not a tutorial.</p>
-      </div>
+    <header class="section-head rv">
+      <div class="eyebrow amber">03 · Selected work</div>
+      <h2 class="h2">Production systems, <span class="grad">shipped end-to-end.</span></h2>
+      <p class="deck" style="margin:16px auto 0;">A short list of real backends — schema to deploy, mostly solo. Real products with real users, not tutorials.</p>
     </header>
 
     <article class="work-featured rv d1">
-      <div class="wf-top">
-        <div class="wf-flag">★ Featured Dossier</div>
-        <div class="wf-meta">Client: Techfy · Year 2024–2025 · Role: Backend Engineer</div>
-      </div>
-      <div class="wf-body">
-        <div class="wf-content">
-          <h3 class="wf-title">Click2Deploy<br/><em>— a multi-tenant Odoo hosting platform.</em></h3>
-          <div class="wf-blurb">
-            <p>Built and maintains the <strong>billing and deployment backend</strong> for Click2Deploy, a multi-tenant Odoo hosting platform. Designed a tiered <strong>Stripe subscription system</strong> handling upgrades, downgrades, and partial refunds across concurrent tenant plans.</p>
-            <p>Built a <strong>Celery + SendGrid</strong> async notification pipeline fully decoupled from the API layer. Automated <strong>Dockerfile generation and AWS image builds</strong> — cutting manual deployment setup from hours to minutes. Shipped pytest coverage integrated into the GitHub Actions CI/CD pipeline.</p>
-          </div>
-          <div class="wf-stack">
-            <span class="chip">Django DRF</span>
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">Redis</span>
-            <span class="chip">Celery</span>
-            <span class="chip">AWS ECS</span>
-            <span class="chip">RDS</span>
-            <span class="chip">ElastiCache</span>
-            <span class="chip red">Stripe</span>
-          </div>
+      <div class="wf-content">
+        <div class="wf-flag">Featured case study</div>
+        <h3 class="wf-title">Click2Deploy — a multi-tenant Odoo hosting platform.</h3>
+        <p class="wf-desc">Built and maintains the billing and deployment backend for Click2Deploy. Designed a tiered Stripe subscription system handling upgrades, downgrades, and partial refunds across concurrent tenant plans. Built a Celery + SendGrid async notification pipeline fully decoupled from the API. Automated Dockerfile generation and AWS image builds — cutting manual deployment from hours to minutes.</p>
+        <div class="wf-stack">
+          <span class="chip blue">Django DRF</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Redis</span>
+          <span class="chip violet">Celery</span>
+          <span class="chip">AWS ECS</span>
+          <span class="chip">RDS</span>
+          <span class="chip emerald">Stripe</span>
         </div>
-        <aside class="wf-side">
-          <div class="wf-stat">
-            <div class="wf-stat-label">Deploy time</div>
-            <div class="wf-stat-val">hrs → min</div>
-            <div class="wf-stat-note">Manual setup cut from hours to minutes after automation.</div>
-          </div>
-          <div class="wf-stat">
-            <div class="wf-stat-label">Production regressions</div>
-            <div class="wf-stat-val red">0</div>
-            <div class="wf-stat-note">Post pytest + CI/CD pipeline rollout.</div>
-          </div>
-          <div class="wf-stat">
-            <div class="wf-stat-label">Core systems shipped solo</div>
-            <div class="wf-stat-val">3</div>
-            <div class="wf-stat-note">Billing · notifications · deploy automation.</div>
-          </div>
-        </aside>
+        <a href="#contact" class="wf-link" data-jump>Discuss a similar build <span>→</span></a>
       </div>
+      <aside class="wf-side">
+        <div class="wf-stat">
+          <div class="wf-stat-label">Deploy time</div>
+          <div class="wf-stat-value blue">hrs → min</div>
+          <div class="wf-stat-note">Manual setup cut from hours to minutes after automation.</div>
+        </div>
+        <div class="wf-stat">
+          <div class="wf-stat-label">Production regressions</div>
+          <div class="wf-stat-value green">0</div>
+          <div class="wf-stat-note">Post pytest + CI/CD pipeline rollout.</div>
+        </div>
+        <div class="wf-stat">
+          <div class="wf-stat-label">Systems shipped solo</div>
+          <div class="wf-stat-value">3</div>
+          <div class="wf-stat-note">Billing · notifications · deploy automation.</div>
+        </div>
+      </aside>
     </article>
 
-    <div class="briefs rv d2">
+    <div class="work-grid">
 
-      <article class="brief">
-        <div class="brief-idx"><span>// 02</span><span class="tag">Marketplace</span></div>
-        <h3 class="brief-name">Guestly — Guest Post Marketplace</h3>
-        <p class="brief-blurb">Built the full backend solo: schema design, REST API, dual-role marketplace logic (buyers + publishers), Celery async order processing, and a Docker + Nginx + GitHub Actions deployment.</p>
-        <div class="brief-chips">
+      <article class="work-card rv d1">
+        <div class="wc-meta"><span class="idx">// 02</span><span>Marketplace</span></div>
+        <h3 class="wc-name">Guestly — Guest Post Marketplace</h3>
+        <p class="wc-desc">Full backend solo: schema design, REST API, dual-role marketplace logic (buyers + publishers), Celery async order processing, and Docker + Nginx + GitHub Actions deployment.</p>
+        <div class="wc-chips">
           <span class="chip">Django</span>
-          <span class="chip">Celery</span>
+          <span class="chip violet">Celery</span>
           <span class="chip">PostgreSQL</span>
           <span class="chip">Docker</span>
-          <span class="chip">GH Actions</span>
         </div>
       </article>
 
-      <article class="brief">
-        <div class="brief-idx"><span>// 03</span><span class="tag">Events</span></div>
-        <h3 class="brief-name">Travel Eleven — Event Planning Platform</h3>
-        <p class="brief-blurb">Designed the complete backend from scratch as sole developer — database schema, REST API, RBAC across three user roles (venue managers, coordinators, finance), and a Celery notification system for guest comms.</p>
-        <div class="brief-chips">
-          <span class="chip">Django DRF</span>
+      <article class="work-card rv d2">
+        <div class="wc-meta"><span class="idx">// 03</span><span>Events</span></div>
+        <h3 class="wc-name">Travel Eleven — Event Platform</h3>
+        <p class="wc-desc">Complete backend from scratch as sole developer — schema, REST API, RBAC across three user roles (venue managers, coordinators, finance), and Celery notifications for guest comms.</p>
+        <div class="wc-chips">
+          <span class="chip blue">Django DRF</span>
           <span class="chip">RBAC</span>
-          <span class="chip">Celery</span>
+          <span class="chip violet">Celery</span>
           <span class="chip">PostgreSQL</span>
         </div>
       </article>
 
-      <article class="brief">
-        <div class="brief-idx"><span>// 04</span><span class="tag">AI / EdTech</span></div>
-        <h3 class="brief-name">KidWiz — AI Learning Platform</h3>
-        <p class="brief-blurb">Integrated GPT-4 for personality assessments mapped to Big Five trait scores. Optimised core database query patterns, eliminating redundant joins across high-frequency platform endpoints.</p>
-        <div class="brief-chips">
+      <article class="work-card rv d3">
+        <div class="wc-meta"><span class="idx">// 04</span><span>AI · EdTech</span></div>
+        <h3 class="wc-name">KidWiz — AI Learning Platform</h3>
+        <p class="wc-desc">Integrated GPT-4 for personality assessments mapped to Big Five trait scores. Optimised core database query patterns, eliminating redundant joins across high-frequency endpoints.</p>
+        <div class="wc-chips">
           <span class="chip">Django</span>
-          <span class="chip red">OpenAI</span>
+          <span class="chip amber">OpenAI</span>
           <span class="chip">PostgreSQL</span>
           <span class="chip">Query opt.</span>
         </div>
@@ -390,114 +444,60 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     §04 — STACK / THE TOOLKIT
+     STACK
 ═══════════════════════════════════════════════════════════ -->
-<section id="stack" class="stack-bg">
+<section id="stack">
   <div class="wrap">
 
-    <header class="chapter rv">
-      <div class="ch-num">§<em>04</em></div>
-      <div class="ch-head">
-        <div class="ch-kicker">The toolkit</div>
-        <h2 class="ch-title">Tools<br/><em>I reach for.</em></h2>
-        <p class="ch-deck">An index of the tools I trust under load. Listed by depth of practice — not by years on a CV.</p>
-      </div>
+    <header class="section-head rv">
+      <div class="eyebrow pink">04 · The toolkit</div>
+      <h2 class="h2">Tools I trust <span class="grad">under load.</span></h2>
+      <p class="deck" style="margin:16px auto 0;">An index of the stack I reach for. Listed by depth of practice, not years on a CV.</p>
     </header>
 
-    <div class="toolkit rv d1">
-      <div class="tk-head">
-        <div>Cat.</div>
-        <div>Tool</div>
-        <div>Use</div>
-        <div>Depth</div>
+    <div class="stack-grid">
+
+      <div class="stack-col rv d1">
+        <div class="stack-cat"><span>Languages</span><span class="num">04</span></div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot"></span>Python 3.11+</div>
+          <div class="stack-item"><span class="stack-dot g"></span>SQL</div>
+          <div class="stack-item"><span class="stack-dot a"></span>JavaScript</div>
+          <div class="stack-item"><span class="stack-dot v"></span>Bash · Shell</div>
+        </div>
       </div>
 
-      <div class="tk-row">
-        <div class="tk-cat">LANG</div>
-        <div class="tk-name">Python 3.11+</div>
-        <div class="tk-detail">Daily driver — APIs, scripting, async, data work.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:96%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">LANG</div>
-        <div class="tk-name">SQL</div>
-        <div class="tk-detail">Query authoring, EXPLAIN ANALYZE, index strategy.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:86%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">LANG</div>
-        <div class="tk-name">JavaScript / Bash</div>
-        <div class="tk-detail">Glue work, deploy scripts, light frontend.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:70%;"></div></div>
+      <div class="stack-col rv d2">
+        <div class="stack-cat"><span>Frameworks</span><span class="num">05</span></div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot"></span>Django 4/5 · DRF</div>
+          <div class="stack-item"><span class="stack-dot v"></span>FastAPI</div>
+          <div class="stack-item"><span class="stack-dot g"></span>Celery</div>
+          <div class="stack-item"><span class="stack-dot a"></span>Flask</div>
+          <div class="stack-item"><span class="stack-dot r"></span>pytest · coverage</div>
+        </div>
       </div>
 
-      <div class="tk-row">
-        <div class="tk-cat">FW</div>
-        <div class="tk-name">Django 4/5 + DRF</div>
-        <div class="tk-detail">Primary framework — REST, ORM, admin, custom middleware.</div>
-        <div class="tk-level"><div class="tk-bar red" style="--lvl:95%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">FW</div>
-        <div class="tk-name">FastAPI</div>
-        <div class="tk-detail">Lean services, async endpoints, OpenAPI-first.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:80%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">FW</div>
-        <div class="tk-name">Celery</div>
-        <div class="tk-detail">Background jobs, retries, scheduled work, fan-out.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:88%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">FW</div>
-        <div class="tk-name">pytest &amp; coverage</div>
-        <div class="tk-detail">Unit, integration, fixtures, CI gates.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:82%;"></div></div>
+      <div class="stack-col rv d3">
+        <div class="stack-cat"><span>Cloud · Infra</span><span class="num">05</span></div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot v"></span>AWS EC2 · S3 · RDS</div>
+          <div class="stack-item"><span class="stack-dot"></span>AWS ECS · ElastiCache</div>
+          <div class="stack-item"><span class="stack-dot g"></span>Docker · Compose</div>
+          <div class="stack-item"><span class="stack-dot a"></span>GitHub Actions CI/CD</div>
+          <div class="stack-item"><span class="stack-dot p"></span>Terraform</div>
+        </div>
       </div>
 
-      <div class="tk-row">
-        <div class="tk-cat">CLOUD</div>
-        <div class="tk-name">AWS — EC2 · S3 · RDS</div>
-        <div class="tk-detail">Day-to-day infra: compute, storage, managed Postgres.</div>
-        <div class="tk-level"><div class="tk-bar red" style="--lvl:84%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">CLOUD</div>
-        <div class="tk-name">Docker / Compose</div>
-        <div class="tk-detail">Reproducible builds, local parity, deploy artefacts.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:85%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">CLOUD</div>
-        <div class="tk-name">GitHub Actions</div>
-        <div class="tk-detail">CI/CD pipelines, lint/test/deploy gates, secrets.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:84%;"></div></div>
-      </div>
-
-      <div class="tk-row">
-        <div class="tk-cat">DATA</div>
-        <div class="tk-name">PostgreSQL</div>
-        <div class="tk-detail">Schema design, indexing, query budgets, migrations.</div>
-        <div class="tk-level"><div class="tk-bar red" style="--lvl:90%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">DATA</div>
-        <div class="tk-name">Redis</div>
-        <div class="tk-detail">Caching, rate limiting, Celery broker, locks.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:82%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">DATA</div>
-        <div class="tk-name">Nginx · Gunicorn</div>
-        <div class="tk-detail">Reverse proxying, TLS, worker tuning.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:78%;"></div></div>
-      </div>
-      <div class="tk-row">
-        <div class="tk-cat">DATA</div>
-        <div class="tk-name">Stripe · SendGrid</div>
-        <div class="tk-detail">Billing flows, webhooks, transactional email at scale.</div>
-        <div class="tk-level"><div class="tk-bar" style="--lvl:86%;"></div></div>
+      <div class="stack-col rv d4">
+        <div class="stack-cat"><span>Data · DevOps</span><span class="num">05</span></div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot g"></span>PostgreSQL</div>
+          <div class="stack-item"><span class="stack-dot r"></span>Redis</div>
+          <div class="stack-item"><span class="stack-dot"></span>Nginx · Gunicorn</div>
+          <div class="stack-item"><span class="stack-dot v"></span>Stripe API</div>
+          <div class="stack-item"><span class="stack-dot a"></span>SendGrid</div>
+        </div>
       </div>
 
     </div>
@@ -506,68 +506,70 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     §05 — ABOUT / THE ENGINEER
+     ABOUT
 ═══════════════════════════════════════════════════════════ -->
 <section id="about">
   <div class="wrap">
 
-    <header class="chapter rv">
-      <div class="ch-num">§<em>05</em></div>
-      <div class="ch-head">
-        <div class="ch-kicker">The engineer</div>
-        <h2 class="ch-title">A profile of<br/><em>the writer.</em></h2>
-        <p class="ch-deck">Backend engineer, two-plus years in production. Builds in public. Writes things down. Available for remote work.</p>
-      </div>
+    <header class="section-head left rv" style="max-width:none;">
+      <div class="eyebrow violet">05 · About</div>
+      <h2 class="h2" style="max-width:680px;">Backend engineer. <span class="grad">Available for remote work.</span></h2>
     </header>
 
-    <div class="about rv d1">
+    <div class="about-grid">
 
-      <figure class="about-portrait">
-        <img src="assets/images/profile.jpg" alt="Awais Yasin — portrait" loading="lazy"/>
-        <figcaption class="portrait-caption">
-          <span>AY</span>
-          <span>Halftone · plate №01</span>
-        </figcaption>
-      </figure>
+      <div class="portrait-wrap rv">
+        <div class="portrait-frame">
+          <img src="assets/images/profile.jpg" alt="Awais Yasin — portrait" loading="lazy"/>
+        </div>
+        <div class="portrait-meta">
+          <div><span>Name</span><b>Awais Yasin</b></div>
+          <div><span>Based</span><b>Lahore · PK</b></div>
+          <div><span>Beat</span><b>Backend Engineer</b></div>
+          <div><span>Status</span><b style="color:var(--emerald);">Open to roles</b></div>
+        </div>
+      </div>
 
-      <div class="about-content">
-        <p class="about-lead">
-          Hi — I'm <strong>Awais Yasin</strong>. I'm a backend engineer with 2+ years building production systems in Python and Django: subscription billing, async task pipelines, AI integrations, and cloud deployments.
-        </p>
+      <div class="about-content rv d2">
+        <p class="lead">2+ years building production systems in Python and Django — subscription billing, async task pipelines, AI integrations, and cloud deployments that scale without drama.</p>
 
-        <p class="about-body">
-          I've built three full backends independently from schema to production, and I'm looking for a <em>remote role with an international team</em> where I can go deep on backend systems and grow alongside engineers who care about the craft.
-        </p>
-        <p class="about-body">
-          I think in data flows and failure modes before I write a line of code. APIs are contracts; I treat them that way. I write down what I've decided and why, and I leave systems better documented than I found them.
-        </p>
+        <p>I've built <strong>three full backends independently from schema to production</strong>, and I'm looking for a <em>remote role with an international team</em> where I can go deep on backend systems and grow alongside engineers who care about the craft.</p>
+
+        <p>I think in data flows and failure modes before I write a line of code. APIs are contracts; I treat them that way. I write down what I've decided and why, and I leave systems better documented than I found them.</p>
 
         <div class="pillars">
           <div class="pillar">
-            <div class="pillar-num">i.</div>
-            <div>
-              <div class="pillar-title">Systems thinker</div>
-              <div class="pillar-desc">Data flows and failure modes come before the first line of code. APIs are contracts — I treat them that way.</div>
+            <div class="pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5b8cff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </div>
+            <div class="pillar-title">Systems thinker</div>
+            <div class="pillar-desc">Data flows and failure modes before the first line of code. APIs are contracts.</div>
           </div>
           <div class="pillar">
-            <div class="pillar-num">ii.</div>
-            <div>
-              <div class="pillar-title">Async-native communicator</div>
-              <div class="pillar-desc">Remote-first from the start. Written updates, clear PRs, and status that doesn't require a meeting to understand.</div>
+            <div class="pillar-icon v" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
+            <div class="pillar-title">Async-native</div>
+            <div class="pillar-desc">Remote-first from day one. Written updates, clear PRs, status that doesn't need a meeting.</div>
           </div>
           <div class="pillar">
-            <div class="pillar-num">iii.</div>
-            <div>
-              <div class="pillar-title">Ownership mentality</div>
-              <div class="pillar-desc">I don't wait to be told what's broken. If I see a problem, I flag it, scope a fix, and ship it.</div>
+            <div class="pillar-icon e" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
+            <div class="pillar-title">Ownership</div>
+            <div class="pillar-desc">I don't wait to be told what's broken. I see a problem, scope a fix, and ship it.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5b8cff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="pillar-title">Engineer's eye</div>
+            <div class="pillar-desc">Tested, indexed, observable. Code that survives the second engineer to touch it.</div>
           </div>
         </div>
 
         <div style="margin-top:32px;">
-          <a href="#contact" class="btn btn-primary" data-jump style="border:var(--rule-bold) solid var(--ink);">Hire Me</a>
+          <a href="#contact" class="btn btn-primary btn-lg" data-jump>Get in touch →</a>
         </div>
       </div>
 
@@ -576,52 +578,51 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     §06 — TESTIMONIALS / FIELD REPORTS
+     TESTIMONIALS
 ═══════════════════════════════════════════════════════════ -->
-<section id="reports" class="services-bg">
+<section id="reports" style="background:linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 50%, var(--bg) 100%);">
   <div class="wrap">
 
-    <header class="chapter rv">
-      <div class="ch-num">§<em>06</em></div>
-      <div class="ch-head">
-        <div class="ch-kicker">Field reports</div>
-        <h2 class="ch-title">What clients<br/><em>actually say.</em></h2>
-        <p class="ch-deck">Notes from the teams I've worked with on real production systems.</p>
-      </div>
+    <header class="section-head rv">
+      <div class="eyebrow">Trusted by teams</div>
+      <h2 class="h2">Field reports <span class="grad">from production.</span></h2>
     </header>
 
-    <div class="reports rv d1">
+    <div class="tests-grid">
 
-      <article class="report">
-        <div class="report-mark">“</div>
-        <blockquote class="report-quote">
-          Awais built the entire Travel Eleven backend solo — schema, APIs, RBAC, notifications. <strong>Delivered clean, documented, and on time.</strong> Exactly what a small team needs.
-        </blockquote>
-        <div class="report-attr">
-          <div class="report-name">Fabtechsol Team</div>
-          <div class="report-role">Engineering · Fabtechsol</div>
+      <article class="test-card rv d1">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Awais built the entire Travel Eleven backend solo — schema, APIs, RBAC, notifications. <strong>Delivered clean, documented, and on time.</strong> Exactly what a small team needs.</p>
+        <div class="test-attr">
+          <div class="test-avi">FT</div>
+          <div>
+            <div class="test-name">Fabtechsol Team</div>
+            <div class="test-role">Engineering · Fabtechsol</div>
+          </div>
         </div>
       </article>
 
-      <article class="report">
-        <div class="report-mark">“</div>
-        <blockquote class="report-quote">
-          Integrated GPT-4 personality assessments cleanly and also optimised the DB layer we'd been putting off. <strong>Fast, focused, zero hand-holding required.</strong>
-        </blockquote>
-        <div class="report-attr">
-          <div class="report-name">AlphaLogics Team</div>
-          <div class="report-role">Engineering · AlphaLogics</div>
+      <article class="test-card rv d2">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Integrated GPT-4 personality assessments cleanly and also optimised the DB layer we'd been putting off. <strong>Fast, focused, zero hand-holding required.</strong></p>
+        <div class="test-attr">
+          <div class="test-avi v">AL</div>
+          <div>
+            <div class="test-name">AlphaLogics Team</div>
+            <div class="test-role">Engineering · AlphaLogics</div>
+          </div>
         </div>
       </article>
 
-      <article class="report">
-        <div class="report-mark">“</div>
-        <blockquote class="report-quote">
-          Awais built our Stripe subscription system — upgrades, downgrades, refunds, the works. <strong>Solid, well-tested, and he flagged edge cases we hadn't even thought of.</strong>
-        </blockquote>
-        <div class="report-attr">
-          <div class="report-name">Techfy / Click2Deploy</div>
-          <div class="report-role">Engineering · Techfy</div>
+      <article class="test-card rv d3">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Awais built our Stripe subscription system — upgrades, downgrades, refunds, the works. <strong>Solid, well-tested, and he flagged edge cases we hadn't even thought of.</strong></p>
+        <div class="test-attr">
+          <div class="test-avi e">TC</div>
+          <div>
+            <div class="test-name">Techfy · Click2Deploy</div>
+            <div class="test-role">Engineering · Techfy</div>
+          </div>
         </div>
       </article>
 
@@ -631,56 +632,61 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     §07 — ARCHIVE / WRITING & OPEN SOURCE
+     WRITING / ARCHIVE
 ═══════════════════════════════════════════════════════════ -->
-<section id="archive" class="archive-bg">
+<section id="writing">
   <div class="wrap">
 
-    <header class="chapter rv">
-      <div class="ch-num">§<em>07</em></div>
-      <div class="ch-head">
-        <div class="ch-kicker">The archive</div>
-        <h2 class="ch-title">Writing &amp;<br/><em>side projects.</em></h2>
-        <p class="ch-deck">A reading list and a source list. Everything coming soon, everything in the open.</p>
-      </div>
+    <header class="section-head rv">
+      <div class="eyebrow">06 · Writing &amp; OSS</div>
+      <h2 class="h2">Things I'm writing. <span class="grad">Things I'm building.</span></h2>
+      <p class="deck" style="margin:16px auto 0;">A reading list, and what's in public source.</p>
     </header>
 
-    <div class="archive-grid rv d1">
+    <div class="archive-grid">
 
-      <div class="archive-col">
+      <div class="archive-panel rv d1">
         <div class="archive-head">
-          <h3>Technical Articles</h3>
-          <div class="meta">Coming soon · 04</div>
+          <h3>Technical articles</h3>
+          <div class="meta">Coming soon</div>
         </div>
         <div class="archive-list">
           <a class="archive-item" href="#">
-            <div class="ai-num">01.</div>
+            <div class="ai-glyph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
             <div class="ai-content">
-              <div class="ai-title">How I built a Stripe billing system with tiered plans</div>
+              <div class="ai-title">Stripe billing with tiered plans</div>
               <div class="ai-tags">Django · Stripe · edge cases</div>
             </div>
             <div class="ai-arrow">→</div>
           </a>
           <a class="archive-item" href="#">
-            <div class="ai-num">02.</div>
+            <div class="ai-glyph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
             <div class="ai-content">
-              <div class="ai-title">Celery + SendGrid: async notifications without blocking your API</div>
+              <div class="ai-title">Celery + SendGrid async notifications</div>
               <div class="ai-tags">Celery · Django · architecture</div>
             </div>
             <div class="ai-arrow">→</div>
           </a>
           <a class="archive-item" href="#">
-            <div class="ai-num">03.</div>
+            <div class="ai-glyph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
             <div class="ai-content">
-              <div class="ai-title">Django Docker deployments with Nginx + GitHub Actions</div>
+              <div class="ai-title">Django deploys with Docker + Nginx + GH Actions</div>
               <div class="ai-tags">DevOps · CI/CD · real setup</div>
             </div>
             <div class="ai-arrow">→</div>
           </a>
           <a class="archive-item" href="#">
-            <div class="ai-num">04.</div>
+            <div class="ai-glyph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
             <div class="ai-content">
-              <div class="ai-title">RBAC in Django DRF — a practical implementation guide</div>
+              <div class="ai-title">RBAC in Django DRF — a practical guide</div>
               <div class="ai-tags">Auth · permissions · multi-role</div>
             </div>
             <div class="ai-arrow">→</div>
@@ -688,14 +694,16 @@
         </div>
       </div>
 
-      <div class="archive-col">
+      <div class="archive-panel rv d2">
         <div class="archive-head">
-          <h3>Open Source</h3>
+          <h3>Open source</h3>
           <div class="meta">GitHub ↗</div>
         </div>
         <div class="archive-list">
           <a class="archive-item" href="https://github.com/awaisyasin" target="_blank" rel="noopener">
-            <div class="ai-num">⬡</div>
+            <div class="ai-glyph">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </div>
             <div class="ai-content">
               <div class="ai-title">Guestly</div>
               <div class="ai-tags">Full-stack marketplace · Django + Celery</div>
@@ -703,7 +711,9 @@
             <div class="ai-arrow">↗</div>
           </a>
           <a class="archive-item" href="https://github.com/awaisyasin" target="_blank" rel="noopener">
-            <div class="ai-num">⬡</div>
+            <div class="ai-glyph">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </div>
             <div class="ai-content">
               <div class="ai-title">Portfolio repos</div>
               <div class="ai-tags">See all on GitHub</div>
@@ -711,7 +721,9 @@
             <div class="ai-arrow">↗</div>
           </a>
           <a class="archive-item" href="https://github.com/awaisyasin" target="_blank" rel="noopener">
-            <div class="ai-num">⬡</div>
+            <div class="ai-glyph">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </div>
             <div class="ai-content">
               <div class="ai-title">More coming</div>
               <div class="ai-tags">Polishing and publishing soon</div>
@@ -719,7 +731,9 @@
             <div class="ai-arrow">↗</div>
           </a>
           <a class="archive-item" href="https://github.com/awaisyasin" target="_blank" rel="noopener">
-            <div class="ai-num">⬡</div>
+            <div class="ai-glyph">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </div>
             <div class="ai-content">
               <div class="ai-title">Open to contributions</div>
               <div class="ai-tags">Building in public</div>
@@ -735,96 +749,75 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     §08 — CONTACT
+     CTA
 ═══════════════════════════════════════════════════════════ -->
-<section id="contact" class="contact">
+<section id="contact" class="cta">
+  <div class="cta-bg" aria-hidden="true"></div>
   <div class="wrap">
-
-    <div class="contact-eyebrow">Get in touch · §08</div>
-
-    <h2 class="contact-title rv">Need a<br/><em>backend engineer?</em></h2>
-
-    <p class="contact-deck rv d1">
-      I'm open to <strong>remote backend roles</strong> — full-time or long-term contract, $2k–$4k per month. If you're building something with Django, async systems, or cloud infra and need someone who can hit the ground running async — <em>let's talk.</em>
-    </p>
-
-    <div class="contact-actions rv d2">
-      <a href="mailto:hello@awaisyasin.co" class="btn btn-primary">hello@awaisyasin.co</a>
-      <a href="https://linkedin.com/in/awaisyasin" class="btn btn-ghost" target="_blank" rel="noopener">View LinkedIn</a>
+    <div class="rv center">
+      <div class="eyebrow" style="margin-bottom:24px;">Get in touch</div>
+      <h2 class="cta-title">Need a backend engineer<br/><span class="grad-blue">who ships?</span></h2>
+      <p class="cta-deck">Open to <strong style="color:var(--text);">remote backend roles</strong> — full-time or long-term contract, $2k–$4k/month. Django, async systems, or cloud infra: let's talk.</p>
+      <div class="cta-actions">
+        <a href="mailto:hello@awaisyasin.co" class="btn btn-primary btn-lg">hello@awaisyasin.co</a>
+        <a href="https://linkedin.com/in/awaisyasin" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">View LinkedIn</a>
+      </div>
     </div>
-
-    <div class="contact-cards rv d3">
-      <a class="ctc" href="mailto:hello@awaisyasin.co">
-        <div class="ctc-glyph">@</div>
-        <div class="ctc-label">Email</div>
-        <div class="ctc-val">hello@awaisyasin.co</div>
-      </a>
-      <a class="ctc" href="https://linkedin.com/in/awaisyasin" target="_blank" rel="noopener">
-        <div class="ctc-glyph">in</div>
-        <div class="ctc-label">LinkedIn</div>
-        <div class="ctc-val">@awaisyasin</div>
-      </a>
-      <a class="ctc" href="https://github.com/awaisyasin" target="_blank" rel="noopener">
-        <div class="ctc-glyph">⬡</div>
-        <div class="ctc-label">GitHub</div>
-        <div class="ctc-val">@awaisyasin</div>
-      </a>
-    </div>
-
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     FOOTER / COLOPHON
+     FOOTER
 ═══════════════════════════════════════════════════════════ -->
 <footer>
-  <div class="colophon">
+  <div class="wrap">
+    <div class="footer-grid">
 
-    <div class="colophon-brand">
-      <div class="footer-wordmark">awaisyasin<span class="dot">.</span><span class="tld">co</span></div>
-      <p class="footer-tagline">A field journal of backend engineering. Filed from Lahore, Pakistan. Available worldwide.</p>
-      <div class="colophon-credits">
-        Set in <b>Bricolage&nbsp;Grotesque</b>, <b>Newsreader</b>, <em>and</em> <b>JetBrains&nbsp;Mono</b>.<br/>
-        Printed on the open web · <em>2026</em>.
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">awaisyasin<span class="tld">.co</span></span>
+        </a>
+        <p class="footer-tagline">Backend engineer building Python systems for teams that ship — remote, async, available worldwide.</p>
+        <div class="footer-status">Available · 2026</div>
       </div>
+
+      <div>
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="#services" data-jump>Services</a></li>
+          <li><a href="#work" data-jump>Work</a></li>
+          <li><a href="#stack" data-jump>Stack</a></li>
+          <li><a href="#about" data-jump>About</a></li>
+          <li><a href="#writing" data-jump>Writing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="mailto:hello@awaisyasin.co">hello@awaisyasin.co</a></li>
+          <li><a href="https://linkedin.com/in/awaisyasin" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/awaisyasin" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://stackoverflow.com/users/22188241/awaisyasin" target="_blank" rel="noopener">Stack Overflow</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Built with</h4>
+        <ul>
+          <li><a>Geist Sans · Geist Mono</a></li>
+          <li><a>HTML · CSS · JavaScript</a></li>
+          <li><a>Hand-crafted, no framework</a></li>
+        </ul>
+      </div>
+
     </div>
 
-    <div>
-      <h4>Sections</h4>
-      <ul>
-        <li><a href="#services" data-jump>§01 Services</a></li>
-        <li><a href="#process" data-jump>§02 Process</a></li>
-        <li><a href="#work" data-jump>§03 Work</a></li>
-        <li><a href="#stack" data-jump>§04 Stack</a></li>
-      </ul>
+    <div class="footer-bot">
+      <span>© 2026 Awais Yasin · All rights reserved.</span>
+      <span><a href="#top" data-jump>Back to top ↑</a></span>
     </div>
-
-    <div>
-      <h4>More</h4>
-      <ul>
-        <li><a href="#about" data-jump>§05 About</a></li>
-        <li><a href="#reports" data-jump>§06 Reports</a></li>
-        <li><a href="#archive" data-jump>§07 Archive</a></li>
-        <li><a href="#contact" data-jump>§08 Contact</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Elsewhere</h4>
-      <ul>
-        <li><a href="mailto:hello@awaisyasin.co">hello@awaisyasin.co</a></li>
-        <li><a href="https://linkedin.com/in/awaisyasin" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/awaisyasin" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://stackoverflow.com/users/22188241/awaisyasin" target="_blank" rel="noopener">Stack Overflow</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-rule">
-    <span><span class="red-dot"></span>Open to remote roles — 2026</span>
-    <span>© Awais Yasin · The Backend Dispatch · Vol. 01</span>
-    <span id="clock">— : —</span>
   </div>
 </footer>
 
